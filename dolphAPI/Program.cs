@@ -18,27 +18,28 @@ namespace dolphAPI
                 Console.WriteLine("Enter number of absolute or conditional rule \n Set absolute rule: \n \n 1) Put a new stamp I if it does not already exist (or it is crossed out) or do not put any. \n 2) Cross out the existing seal J if it already exists and is not crossed out, or do not cross out any seal. \n 3) Send Vasya to the next department K. \n \nSet conditional rule: \n If the bypass sheet has an uncrossed N stamp, then: \n 4) Put a new stamp I if it does not already exist (or it is crossed out) or do not put any. \n 5) Cross out the existing seal J if it already exists and is not crossed out, or do not cross out any seal. \n 6) Send Vasya to the next department K.");
                 var rule = ParseIntOrReturn0(Console.ReadLine());
                 depRules[i] = rule;
-                ConfigElseRuleOrReturn0(rule, rulesElse, i);
+                if (rule is > 3 and < 7)
+                {
+                    rulesElse[i] = ReturnTempRule(rule);
+                }
             }
             Printer(depRules, rulesElse);
         }
         
-        // Method configure rules of department  
-        private static int ConfigElseRuleOrReturn0(int rule, int[] rulesElse, int i)
+        // Method which configure else rule 
+        private static int ReturnTempRule(int rule)
         {
             if (rule is > 3 and < 7)
             {
                 Console.WriteLine(
                     "\n \n Input else rule \n \n 7) Put a new stamp T if it does not already exist (or is crossed out) or do not put any. \n 8) Cross out the existing R stamp if it already exists (or not) or do not cross out any. \n 9) Send Vasya to the next department P. \n");
-                
                 var tempRule = ParseIntOrReturn0(Console.ReadLine());
                 if (tempRule is > 6 and < 10)
                 {
-                    rulesElse[i] = tempRule;
                     return tempRule;
                 }
             }
-            return rule;
+            return 0;
         }
         
         // Parse user input or return 0 if user input is no valid 
