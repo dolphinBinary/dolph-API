@@ -29,20 +29,29 @@ namespace dolphAPI
                     rulesElse[i] = 0;
                 }
             }
-            
+            Printer(depRules, rulesElse);
+        }
+
+        public static void Printer(int[] depRules, int[] rulesElse)
+        {
             for (int i = 0; i < depRules.Length; i++)
             {
                 Console.Write($"| {depRules[i]} ");
                 Console.Write($" {rulesElse[i]} ");
             }
         }
-
+        // Validation user input 
         static int Validation(string input)
         {
             var res = int.TryParse(input, out _);
             if (res == false)
             {
                 input = "0";
+            }
+
+            if (Convert.ToInt32(input) < 1)
+            {
+                return 0;
             }
             Console.WriteLine(res);
             return Convert.ToInt32(input);
