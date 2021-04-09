@@ -22,7 +22,10 @@ namespace dolphAPI
                 {
                     Console.WriteLine("\n \n Input else rule \n \n 7) Put a new stamp T if it does not already exist (or is crossed out) or do not put any. \n 8) Cross out the existing R stamp if it already exists (or not) or do not cross out any. \n 9) Send Vasya to the next department P. \n");
                     var tempRule = Validation(Console.ReadLine());
-                    rulesElse[i] = tempRule;
+                    if (tempRule > 6 && tempRule < 10)
+                    {
+                        rulesElse[i] = tempRule;
+                    }
                 }
                 else
                 {
