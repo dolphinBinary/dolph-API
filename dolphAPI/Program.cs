@@ -46,13 +46,8 @@ namespace dolphAPI
         // Validation user input 
         static int Validation(string input)
         {
-            var res = int.TryParse(input, out var parsed);
-            if (parsed < 1)
-            {
-                return 0;
-            }
-            Console.WriteLine(res);
-            return parsed;
+            var result = int.TryParse(input, out var parsed) && parsed >= 1 ? parsed : 0;
+            return result;
         }
     }
 }
