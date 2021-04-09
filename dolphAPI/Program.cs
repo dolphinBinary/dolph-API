@@ -22,7 +22,7 @@ namespace dolphAPI
             }
             Printer(depRules, rulesElse);
         }
-
+        // Method configure rules of department  
         private static void ConfigElseRuleOrReturn0(int rule, int[] rulesElse, int i)
         {
             if (rule is > 3 and < 7)
