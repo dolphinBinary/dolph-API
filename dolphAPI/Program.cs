@@ -22,23 +22,23 @@ namespace dolphAPI
             }
             Printer(depRules, rulesElse);
         }
+        
         // Method configure rules of department  
-        private static void ConfigElseRuleOrReturn0(int rule, int[] rulesElse, int i)
+        private static int ConfigElseRuleOrReturn0(int rule, int[] rulesElse, int i)
         {
             if (rule is > 3 and < 7)
             {
                 Console.WriteLine(
                     "\n \n Input else rule \n \n 7) Put a new stamp T if it does not already exist (or is crossed out) or do not put any. \n 8) Cross out the existing R stamp if it already exists (or not) or do not cross out any. \n 9) Send Vasya to the next department P. \n");
+                
                 var tempRule = ParseIntOrReturn0(Console.ReadLine());
                 if (tempRule is > 6 and < 10)
                 {
                     rulesElse[i] = tempRule;
+                    return tempRule;
                 }
             }
-            else
-            {
-                rulesElse[i] = 0;
-            }
+            return rule;
         }
         
         // Parse user input or return 0 if user input is no valid 
@@ -46,6 +46,8 @@ namespace dolphAPI
         {
             return int.TryParse(input, out var parsed) && parsed >= 1 ? parsed : 0;
         }
+        
+        // Print Library and API output 
         private static void Printer(int[] depRules, int[] rulesElse)
         { 
             for (var i = 0; i < depRules.Length; i++) 
