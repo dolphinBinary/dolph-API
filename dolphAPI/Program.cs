@@ -18,14 +18,24 @@ namespace dolphAPI
             {
                 Console.WriteLine("Enter number of absolute or conditional rule \n Set absolute rule: \n \n 1) Put a new stamp I if it does not already exist (or it is crossed out) or do not put any. \n 2) Cross out the existing seal J if it already exists and is not crossed out, or do not cross out any seal. \n 3) Send Vasya to the next department K. \n \nSet conditional rule: \n If the bypass sheet has an uncrossed N stamp, then: \n 4) Put a new stamp I if it does not already exist (or it is crossed out) or do not put any. \n 5) Cross out the existing seal J if it already exists and is not crossed out, or do not cross out any seal. \n 6) Send Vasya to the next department K.");
                 var rule = Configurator.ParseIntOrReturn0(Console.ReadLine());
-                depRules[i] = rule;
-                rulesElse[i] = ReturnTempRule(rule);
+                depRules[i] = ReturnAbsOrCondRule(rule);
+                rulesElse[i] = ReturnElseRule(rule);
             }
             Printer(depRules, rulesElse);
         }
         
+        // Method which configure absolute or conditional rule
+        private static int ReturnAbsOrCondRule(int rule)
+        {
+            if (rule is > 0 and < 7)
+            {
+                return rule;
+            }
+            return 0;
+        }
+        
         // Method which configure else rule 
-        private static int ReturnTempRule(int rule)
+        private static int ReturnElseRule(int rule)
         {
             if (rule is > 3 and < 7)
             {
