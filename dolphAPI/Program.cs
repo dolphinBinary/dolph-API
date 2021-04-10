@@ -14,7 +14,7 @@ namespace dolphAPI
             var depRules = new int[depNum]; // Array with absolute rules
             var rulesElse = new int[depNum]; // Array with conditional rules
             // Configure department rules
-            for (int i = 0; i < depNum; i++)
+            for (var i = 0; i < depNum; i++)
             {
                 Console.WriteLine("Enter number of absolute or conditional rule \n Set absolute rule: \n \n 1) Put a new stamp I if it does not already exist (or it is crossed out) or do not put any. \n 2) Cross out the existing seal J if it already exists and is not crossed out, or do not cross out any seal. \n 3) Send Vasya to the next department K. \n \nSet conditional rule: \n If the bypass sheet has an uncrossed N stamp, then: \n 4) Put a new stamp I if it does not already exist (or it is crossed out) or do not put any. \n 5) Cross out the existing seal J if it already exists and is not crossed out, or do not cross out any seal. \n 6) Send Vasya to the next department K.");
                 var rule = Configurator.ParseIntOrReturn0(Console.ReadLine());
@@ -57,6 +57,13 @@ namespace dolphAPI
             {
                 Console.Write($"| {depRules[i]} ");
                 Console.Write($" {rulesElse[i]} ");
+            }
+
+            // Configurator.RuleParser(depRules, rulesElse);
+            Console.WriteLine();
+            for (var i = 0; i < depRules.Length; i++)
+            {
+                Console.Write($"| {Configurator.RuleParser(depRules, rulesElse)[i]} ");
             }
         }
     }
