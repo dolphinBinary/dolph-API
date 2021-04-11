@@ -4,7 +4,8 @@ This is a jetbrains internship test task solution
 # Downloading API
 
 1) Requierments: 
- * dotnet5  
+ * dotnet5
+  
 Optional: 
  * JetBrains Rider - Recomended (:
  * VisualStudio
