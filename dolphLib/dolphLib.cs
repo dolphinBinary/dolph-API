@@ -1,4 +1,4 @@
-﻿using System;
+﻿using dolph_Input;
 
 namespace dolphLib
 {
@@ -32,23 +32,17 @@ namespace dolphLib
                         break;
                     
                     case 3: case 6:
-                        Console.WriteLine("\n Enter goto department parameter");
-                        var temporaryIterator = Checker.ParseIntOrReturn0(Console.ReadLine()); // Temporary iterator for switching to a given department 
+                        var temporaryIterator = Checker.ParseIntOrReturn0(ReturnUserInput.DepartmentNumberConfigurator(4)); // Temporary iterator for switching to a given department 
                         
                         // The user sets the department number to which he wants to move the pointer, the ternary operator checks the entered rule using the ReturnParameterOrZero method
                         i = rulesElse[i] < 7 ? ReturnParameterOrZero(temporaryIterator, departmentRules) : ReturnRuleElse(rulesElse, bypassSheet, i);
                         
                         var temporaryBypass = bypassSheet; // temporary bypass sheet for checking loop
-                        Console.WriteLine(Checker.IsLoop(bypassSheet, temporaryBypass));
+                        ReturnUserInput.Printer(Checker.IsLoop(bypassSheet, temporaryBypass));
                         break;
                 }
             }
-            // Console output of differences in the bypass sheet
-            Console.WriteLine("\n Differences in bypass sheet: ");
-            foreach (var t in bypassSheet)
-            {
-                Console.Write($"| {t} ");
-            }
+            ReturnUserInput.DifferencesPrinter(bypassSheet);
             return bypassSheet;
         }
         
@@ -60,15 +54,13 @@ namespace dolphLib
                 case 7:
                     if (bypassSheet[i] is 0) // if stamp in bypass sheet is 0 write stamp
                     {
-                        Console.WriteLine("\n Enter stamp number");
-                        var temporaryStamp = Checker.ParseIntOrReturn0(Console.ReadLine());
+                        var temporaryStamp = Checker.ParseIntOrReturn0(ReturnUserInput.DepartmentNumberConfigurator(5));
                         bypassSheet[ReturnParameterOrZero(temporaryStamp, rulesElse)] = ReturnParameterOrZero(temporaryStamp, rulesElse);
                     }
                     break;
                 
                 case 8:
-                    Console.WriteLine("\n Enter cross out number of stamp");
-                    var temporaryDep = Checker.ParseIntOrReturn0(Console.ReadLine()); // temporary stamp number for cross out 
+                    var temporaryDep = Checker.ParseIntOrReturn0(ReturnUserInput.DepartmentNumberConfigurator(6)); // temporary stamp number for cross out 
                     if (bypassSheet[i] == i + 1) // If the bypass sheet has a stamp i, the parser crosses it out
                     {
                         bypassSheet[ReturnParameterOrZero(temporaryDep, rulesElse)] = ReturnParameterOrZero(temporaryDep, rulesElse);
@@ -76,8 +68,7 @@ namespace dolphLib
                     break;
                 
                 case 9:
-                    Console.WriteLine("\n Enter goto department parameter"); 
-                    var tempEnum = Checker.ParseIntOrReturn0(Console.ReadLine()); // Temporary iterator for switching to a given department 
+                    var tempEnum = Checker.ParseIntOrReturn0(ReturnUserInput.DepartmentNumberConfigurator(7)); // Temporary iterator for switching to a given department 
                     i = ReturnParameterOrZero(tempEnum, rulesElse); // Write to iterator temporary enumerator fr goto department
                     break;
             }
