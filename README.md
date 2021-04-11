@@ -3,14 +3,14 @@ This is a jetbrains internship test task solution
 
 # Downloading API
 
-Requierments: 
+1) Requierments: 
  * dotnet5  
 Optional: 
  * JetBrains Rider - Recomended (:
  * VisualStudio
  * VisualStudio Code
 
-Installing API and use
+2) Installing API and use
  *  Download archive
  - Run Program.cs
 
