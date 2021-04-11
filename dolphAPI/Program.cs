@@ -53,14 +53,16 @@ namespace dolphAPI
         // Print Library and API output 
         private static void Printer(int[] depRules, int[] rulesElse)
         {
+            Console.WriteLine("Defined configuration \n");
             for (var i = 0; i < depRules.Length; i++)
             {
                 Console.Write($"| {depRules[i]} ");
                 Console.Write($" {rulesElse[i]} ");
             }
 
+            Console.WriteLine("\n");
             // Configurator.RuleParser(depRules, rulesElse);
-            Console.WriteLine();
+            Console.WriteLine("\n Output of the bypass sheet filled with stamps");
             for (var i = 0; i < depRules.Length; i++)
             {
                 Console.Write($"| {Configurator.RuleParser(depRules, rulesElse)[i]} ");

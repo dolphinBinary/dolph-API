@@ -13,15 +13,23 @@ namespace dolphLib
                 switch (depRules[i])
                 {
                     case 1: case 4:
-                        bypass[i] = i + 1;
+                        if (bypass[i] is 0)
+                        {
+                            bypass[i] = i + 1;
+                        }
                         i = ReturnRuleElse(rulesElse, i, bypass);
                         break;
+                    
                     case 2: case 5:
-                        bypass[i] = -1;
+                        if (bypass[i] == i + 1)
+                        {
+                            bypass[i] = -1;
+                        }
                         i = ReturnRuleElse(rulesElse, i, bypass);
                         break;
+                    
                     case 3: case 6:
-                        Console.WriteLine("\n Enter goto parameter");
+                        Console.WriteLine("\n Differences in bypass: ");
                         i = ReturnRuleElse(rulesElse, i, bypass);
                         break;
                 }
@@ -39,10 +47,16 @@ namespace dolphLib
             switch (rulesElse[i])
             {
                 case 7:
-                    bypass[i] = i + 1;
+                    if (bypass[i] is 0)
+                    {
+                        bypass[i] = i + 1;
+                    }
                     break;
                 case 8:
-                    bypass[i] = -1;
+                    if (bypass[i] == i + 1)
+                    {
+                        bypass[i] = -1;
+                    }
                     break;
                 case 9:
                     Console.WriteLine("\n Enter goto parameter");
