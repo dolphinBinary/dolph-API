@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dolphAPI", "dolphAPI\dolphA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dolphLib", "dolphLib\dolphLib.csproj", "{9C7859DB-F28E-4CBF-8233-DD0282CE45DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dolph-Input", "dolph-Input\dolph-Input.csproj", "{EC45337D-C3F5-4306-98F9-6434414C1150}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dolph.Input", "dolph.Input\dolph.Input.csproj", "{0CA5DB46-D548-470F-97FF-01442AF766DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +20,9 @@ Global
 		{9C7859DB-F28E-4CBF-8233-DD0282CE45DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C7859DB-F28E-4CBF-8233-DD0282CE45DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C7859DB-F28E-4CBF-8233-DD0282CE45DD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC45337D-C3F5-4306-98F9-6434414C1150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC45337D-C3F5-4306-98F9-6434414C1150}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC45337D-C3F5-4306-98F9-6434414C1150}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC45337D-C3F5-4306-98F9-6434414C1150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA5DB46-D548-470F-97FF-01442AF766DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA5DB46-D548-470F-97FF-01442AF766DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA5DB46-D548-470F-97FF-01442AF766DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA5DB46-D548-470F-97FF-01442AF766DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

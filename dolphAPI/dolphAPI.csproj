@@ -7,6 +7,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\dolph-Input\dolph-Input.csproj" />
+      <ProjectReference Include="..\dolph.Input\dolph.Input.csproj" />
       <ProjectReference Include="..\dolphLib\dolphLib.csproj" />
       <ProjectReference Include="..\ConsoleInput\ConsoleInput.csproj" />
     </ItemGroup>

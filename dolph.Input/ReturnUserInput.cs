@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace dolph_Input
+namespace dolph.Input
 {
     public static class ReturnUserInput
     {
