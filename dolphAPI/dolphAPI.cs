@@ -3,7 +3,7 @@ using dolph.Input;
 
 namespace dolphAPI
 {
-    static class Program
+    internal static class Program
     {
         public static void Main()
         {
@@ -19,6 +19,8 @@ namespace dolphAPI
                 departmentRules[i] = ReturnAbsOrCondRule(rule);
                 rulesElse[i] = ReturnElseRule(rule);
             }
+
+            ReturnUserInput.DifferencesPrinter(Configurator.RuleParser(departmentRules, rulesElse));
             ReturnUserInput.ResultPrinter(departmentRules, rulesElse);
         }
         
