@@ -28,3 +28,5 @@ API Output
  - Natural numbers greater than 0 - prints
  - 0 when department was not visited or is the starting point for moving to the next department
  - -1 stamp is crossed out 
+
+Архитектура Библиотеки и API - гаражный кооператив
